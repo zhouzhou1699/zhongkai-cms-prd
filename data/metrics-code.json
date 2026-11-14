@@ -1,0 +1,57 @@
+{
+ "repo": {
+  "commits": 57,
+  "first_commit": "2026-10-15",
+  "last_commit": "2026-10-27"
+ },
+ "pages": {
+  "count": 41,
+  "total_bytes": 962376,
+  "avg_bytes": 23472,
+  "max": [
+   "index.html",
+   59508
+  ],
+  "min": [
+   "news-what-is-data-annotation.html",
+   15351
+  ]
+ },
+ "code_lines": {
+  "admin/server.py": 3039,
+  "admin/static/app.js": 2416,
+  "admin/static/admin.css": 908,
+  "_build/common.py": 1664,
+  "_build/pagebuild.py": 337,
+  "_build/gen_base_details.py": 144,
+  "_build/gen_group_pages.py": 773,
+  "_build/gen_home.py": 516,
+  "_build/gen_product_banners.py": 152,
+  "_build/gen_product_details.py": 178,
+  "_build/gen_product_sites.py": 214,
+  "_build/gen_service_pages.py": 680,
+  "_build/gen_wechat_news.py": 588
+ },
+ "code_total": 11609,
+ "asset_bytes": {
+  "css": 235731,
+  "js_svc": 27733
+ },
+ "fields_total": 218,
+ "field_types": {
+  "text": 39,
+  "longtext": 57,
+  "image": 9,
+  "paras": 71,
+  "cells": 9,
+  "stats": 10,
+  "tabs": 2,
+  "milestones": 2,
+  "news": 1,
+  "news_page": 1,
+  "number": 7,
+  "tags": 7,
+  "blocks": 3
+ },
+ "pages_with_fields": 37
+}

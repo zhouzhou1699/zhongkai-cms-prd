@@ -1,0 +1,107 @@
+[
+ {
+  "slug": "product-annotation",
+  "name": "大模型通用数据标注平台",
+  "sub": "多模态标注",
+  "kind": "sw",
+  "banner": "面向大模型训练的数据标注全流程平台，覆盖采集、清洗、标注、审核与交付。"
+ },
+ {
+  "slug": "product-3d",
+  "name": "3D点云标注平台",
+  "sub": "点云标注",
+  "kind": "sw",
+  "banner": "面向自动驾驶与工业视觉的 3D 点云数据标注平台。"
+ },
+ {
+  "slug": "product-model-train",
+  "name": "模型训练可视化平台",
+  "sub": "模型训练",
+  "kind": "sw",
+  "banner": "让模型训练过程透明可控的一体化训练管理平台。"
+ },
+ {
+  "slug": "product-edu",
+  "name": "产教融合数字化管理平台",
+  "sub": "产教融合",
+  "kind": "sw",
+  "banner": "面向院校教学与实训管理的产教融合数字化平台。"
+ },
+ {
+  "slug": "product-digital-human",
+  "name": "AI数字人直播",
+  "sub": "数字人直播",
+  "kind": "sw",
+  "banner": "一站式 AI 数字人直播解决方案，助力 7×24 小时无人直播降本增效。"
+ },
+ {
+  "slug": "product-short-video",
+  "name": "AI短视频矩阵创作平台",
+  "sub": "短视频矩阵",
+  "kind": "sw",
+  "banner": "面向短视频矩阵运营的 AI 创作平台，批量文案、智能剪辑、多账号分发一体化。"
+ },
+ {
+  "slug": "product-geo",
+  "name": "GEO网络营销实训平台",
+  "sub": "GEO 实训",
+  "kind": "sw",
+  "banner": "面向院校网络营销专业的仿真实训平台，模拟真实投放与运营场景。"
+ },
+ {
+  "slug": "product-smart-park",
+  "name": "智慧园区管理云平台",
+  "sub": "智慧园区",
+  "kind": "sw",
+  "banner": "面向产业园区的智慧管理云平台，一屏统管招商、服务、能耗与安防。"
+ },
+ {
+  "slug": "product-ai-comic",
+  "name": "AI漫画创作平台",
+  "sub": "AI 漫画",
+  "kind": "sw",
+  "banner": "AI 漫画与内容创作平台，脚本生成、分镜绘制、风格化出图一体化。"
+ },
+ {
+  "slug": "product-anno-train",
+  "name": "数据标注产教融合实训平台",
+  "sub": "标注实训",
+  "kind": "sw",
+  "banner": "面向院校数据标注专业的实训平台，内置真实项目案例，实现“实训即生产”。"
+ },
+ {
+  "slug": "product-contest",
+  "name": "数据标注职业技能大赛及评审系统",
+  "sub": "赛事评审",
+  "kind": "sw",
+  "banner": "支持赛事报名、在线作答、自动评分与专家评审的全流程赛事系统。"
+ },
+ {
+  "slug": "product-edu-online",
+  "name": "在线教育平台",
+  "sub": "在线教育",
+  "kind": "sw",
+  "banner": "面向职业教育与继续教育的在线学习平台，课程、直播、考试、分析一体化。"
+ },
+ {
+  "slug": "product-edge-box",
+  "name": "AI边缘盒子",
+  "sub": "边缘算力",
+  "kind": "hw",
+  "banner": "面向边缘场景的 AI 算力盒子，本地视频接入与算法推理，快速部署。"
+ },
+ {
+  "slug": "product-ai-camera",
+  "name": "AI摄像头",
+  "sub": "智能视觉",
+  "kind": "hw",
+  "banner": "内置 AI 算法的智能摄像头，支持人脸、行为、车辆等多类目标识别。"
+ },
+ {
+  "slug": "product-ai-server",
+  "name": "AI服务器",
+  "sub": "算力服务",
+  "kind": "hw",
+  "banner": "面向模型训练与推理的高性能 AI 服务器，支持多卡 GPU 扩展。"
+ }
+]

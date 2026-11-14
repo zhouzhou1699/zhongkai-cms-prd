@@ -1,0 +1,11 @@
+{
+ "full_first_s": 0.223,
+ "pages": 40,
+ "full_warm_s": 0.217,
+ "single_s": 0.072,
+ "per_page_ms_avg": 4.0,
+ "per_page_ms_max": 4,
+ "python_start_s": 0.203,
+ "python_import_common_s": 0.283,
+ "errors": 0
+}

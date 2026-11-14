@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZK-CMS 可点原型 · 中开内容中台</title>
+<style>
+:root{
+  --bg:#f7f8fa; --surface:#fff; --ink:#111827; --ink2:#374151; --muted:#6b7280;
+  --line:#e5e7eb; --line2:#f1f3f5; --blue:#2563eb; --blue-bg:#eff6ff;
+  --red:#dc2626; --red-bg:#fef2f2; --amber:#d97706; --amber-bg:#fffbeb;
+  --green:#059669; --green-bg:#ecfdf5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:13px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:#fff;
+  color:var(--ink2);border-radius:6px;padding:6px 12px;transition:.15s}
+button:hover{border-color:#cbd5e1;background:#fafbfc}
+button.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+button.primary:hover{background:#1d4ed8}
+button.danger{color:var(--red);border-color:#fecaca}
+button.danger:hover{background:var(--red-bg)}
+button.ghost{border-color:transparent;background:transparent}
+input,textarea{font:inherit;width:100%;border:1px solid var(--line);border-radius:6px;
+  padding:7px 10px;color:var(--ink);background:#fff}
+input:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-bg)}
+textarea{resize:vertical;min-height:64px;line-height:1.7}
+
+/* 顶栏 */
+.top{position:sticky;top:0;z-index:20;height:52px;background:#fff;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:12px;padding:0 16px}
+.logo{width:26px;height:26px;border-radius:7px;background:var(--blue);color:#fff;
+  display:grid;place-items:center;font-weight:700;font-size:11px}
+.top .t{font-weight:600;font-size:13.5px}
+.top .sep{width:1px;height:18px;background:var(--line)}
+.top .right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.dirty{font-size:12px;color:var(--red);display:none;align-items:center;gap:5px}
+.dirty.on{display:flex}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--red)}
+.user{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink2);
+  padding:5px 10px;border:1px solid var(--line);border-radius:6px;cursor:pointer}
+
+/* 三栏 */
+.main{display:grid;grid-template-columns:232px minmax(0,1fr) 320px;height:calc(100vh - 52px)}
+@media(max-width:1180px){.main{grid-template-columns:200px minmax(0,1fr)} .rail{display:none}}
+
+/* 左树 */
+.tree{border-right:1px solid var(--line);background:#fff;overflow:auto;padding:10px 8px}
+.tree .search{margin-bottom:8px}
+.tree .search input{padding:6px 9px;font-size:12.5px;background:#f9fafb}
+.site{margin-bottom:6px}
+.site>.h{display:flex;align-items:center;gap:6px;padding:7px 8px;border-radius:6px;
+  font-weight:600;font-size:12.5px;cursor:pointer;color:var(--ink)}
+.site>.h:hover{background:#f9fafb}
+.site .caret{transition:.2s;font-size:9px;color:var(--muted)}
+.site.closed .caret{transform:rotate(-90deg)}
+.site.closed .pages{display:none}
+.pages{padding-left:4px}
+.pg{display:block;width:100%;text-align:left;border:0;background:transparent;
+  padding:6px 9px 6px 16px;border-radius:6px;font-size:12.5px;color:var(--ink2);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pg:hover{background:#f3f4f6}
+.pg.on{background:var(--blue-bg);color:var(--blue);font-weight:600}
+.pg .cnt{color:var(--muted);font-size:11px;margin-left:4px;font-weight:400}
+
+/* 中栏 */
+.editor{overflow:auto;padding:18px 22px 80px}
+.crumb{font-size:12px;color:var(--muted);margin-bottom:6px}
+.crumb b{color:var(--ink);font-weight:600}
+.h1{font-size:17px;font-weight:600;margin:0 0 4px}
+.meta{font-size:12px;color:var(--muted);margin-bottom:18px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tag{background:#f3f4f6;border-radius:4px;padding:1px 7px;font-size:11px;color:var(--ink2)}
+.fld{margin-bottom:16px;max-width:760px}
+.fld>label{display:block;font-size:12.5px;font-weight:600;color:var(--ink2);margin-bottom:5px}
+.fld .hint{font-size:11.5px;color:var(--muted);margin-top:4px;font-weight:400}
+.row{display:flex;gap:6px;align-items:flex-start;margin-bottom:5px}
+.row .no{width:18px;flex:none;text-align:right;color:var(--muted);font-size:11.5px;padding-top:8px}
+.row .acts{display:flex;gap:2px;flex:none;padding-top:2px}
+.row .acts button{padding:3px 6px;font-size:11px;border-color:transparent;color:var(--muted)}
+.row .acts button:hover{background:#f3f4f6;color:var(--ink)}
+.imgbox{display:flex;gap:10px;align-items:flex-start}
+.thumb{width:132px;height:74px;border-radius:6px;border:1px solid var(--line);flex:none;
+  background:linear-gradient(135deg,#dbeafe,#bfdbfe);display:grid;place-items:center;color:#3b82f6;font-size:11px}
+.stats{display:flex;gap:8px;flex-wrap:wrap}
+.stat{border:1px solid var(--line);border-radius:6px;padding:7px 10px;display:flex;gap:5px;align-items:center}
+.stat input{width:64px;border:0;padding:0;font-weight:600;font-size:15px;text-align:right}
+.stat input.unit{width:52px;font-weight:400;font-size:12px;color:var(--muted);text-align:left}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.chip{background:#eef2ff;color:#4338ca;border-radius:4px;padding:2px 8px;font-size:11.5px}
+
+/* 右栏 */
+.rail{border-left:1px solid var(--line);background:#fff;overflow:auto;padding:14px}
+.card{border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:12px}
+.card h3{margin:0 0 10px;font-size:12.5px;font-weight:600;color:var(--ink)}
+.steps{font-size:12px;color:var(--ink2);line-height:2}
+.step{display:flex;gap:8px;align-items:flex-start}
+.step .ic{width:14px;flex:none;text-align:center;color:var(--muted)}
+.step.done .ic{color:var(--green)}
+.step.run .ic{color:var(--blue)}
+.step.err .ic{color:var(--red)}
+.kv{display:flex;justify-content:space-between;font-size:12px;padding:3px 0;color:var(--ink2)}
+.kv b{font-weight:600}
+.bar{height:5px;border-radius:3px;background:var(--line2);overflow:hidden;margin:8px 0}
+.bar>i{display:block;height:100%;background:var(--blue);width:0;transition:width .25s}
+.cmp{font-size:12px}
+.cmp div{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed var(--line2)}
+.cmp div:last-child{border:0}
+.cmp .old{color:var(--muted);text-decoration:line-through}
+.cmp .new{color:var(--green);font-weight:600}
+.switch{display:flex;flex-wrap:wrap;gap:4px}
+.switch button{padding:3px 8px;font-size:11.5px;border-radius:999px}
+.switch button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.banner{display:none;border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:12.5px}
+.banner.on{display:block}
+.banner.warn{background:var(--amber-bg);border:1px solid #fde68a;color:#92400e}
+.banner.err{background:var(--red-bg);border:1px solid #fecaca;color:#991b1b}
+.banner.ok{background:var(--green-bg);border:1px solid #a7f3d0;color:#065f46}
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty h3{color:var(--ink);margin:0 0 6px}
+.note{font-size:11.5px;color:var(--muted);line-height:1.75}
+.overlay{position:fixed;inset:0;background:rgba(17,24,39,.45);display:none;z-index:50;
+  align-items:center;justify-content:center;padding:24px}
+.overlay.on{display:flex}
+.modal{background:#fff;border-radius:10px;max-width:520px;width:100%;padding:18px 20px}
+.modal h3{margin:0 0 8px;font-size:15px}
+.modal p{font-size:12.5px;color:var(--ink2);line-height:1.75;margin:0 0 12px}
+.modal .diff{background:var(--red-bg);border-radius:6px;padding:8px 10px;font-size:12px;
+  color:#7f1d1d;margin-bottom:12px}
+.modal .acts{display:flex;gap:8px;justify-content:flex-end}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(10px);
+  background:var(--ink);color:#fff;padding:8px 16px;border-radius:6px;font-size:12.5px;
+  opacity:0;transition:.25s;pointer-events:none;z-index:60}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="logo">ZK</div>
+  <div class="t">中开官网 · 运营后台</div>
+  <div class="sep"></div>
+  <div class="dirty" id="dirty"><i class="dot"></i><span id="dirtyN">0</span> 处未发布修改</div>
+  <div class="right">
+    <button id="btnSave">保存</button>
+    <button class="primary" id="btnPublish">保存并发布</button>
+    <button id="btnPreview">预览修改</button>
+    <div class="user" id="btnUser">admin · 管理员 ▾</div>
+  </div>
+</div>
+
+<div class="main">
+  <nav class="tree" id="tree">
+    <div class="search"><input id="q" placeholder="搜索页面 / 产品 / 基地…"></div>
+    <div id="treeBody"></div>
+  </nav>
+
+  <main class="editor" id="editor"></main>
+
+  <aside class="rail">
+    <div class="card">
+      <h3>发布状态机</h3>
+      <div class="steps" id="steps"></div>
+      <div class="bar"><i id="bar"></i></div>
+      <div class="kv"><span>模式</span><b id="mode">—</b></div>
+      <div class="kv"><span>重建页数</span><b id="pages">—</b></div>
+      <div class="kv"><span>耗时</span><b id="cost">—</b></div>
+      <div class="banner" id="pubBanner"></div>
+    </div>
+
+    <div class="card">
+      <h3>影响面计算</h3>
+      <div id="impact" class="note">改一个字段后，这里显示会重建哪些页面、为什么。</div>
+    </div>
+
+    <div class="card">
+      <h3>优化前后</h3>
+      <div class="cmp">
+        <div><span>全量发布</span><span><i class="old">4.5s</i> → <b class="new">0.22s</b></span></div>
+        <div><span>单页发布</span><span><i class="old">4.5s</i> → <b class="new">0.07s</b></span></div>
+        <div><span>内容丢失</span><span><i class="old">可能</i> → <b class="new">0</b></span></div>
+        <div><span>发布失败</span><span><i class="old">半新半旧</i> → <b class="new">自动回滚</b></span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>演示状态</h3>
+      <div class="switch" id="states">
+        <button data-s="default" class="on">默认</button>
+        <button data-s="dirty">有未发布</button>
+        <button data-s="conflict">保存冲突</button>
+        <button data-s="fail">发布失败</button>
+        <button data-s="empty">空状态</button>
+      </div>
+      <div class="note" style="margin-top:8px">原型数据来自真实系统的 218 个字段，可点、可改、可发布。</div>
+    </div>
+  </aside>
+</div>
+
+<div class="overlay" id="ov"><div class="modal" id="ovBody"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+var DATA = /*__DATA__*/null;
+var S = { page:null, site:'service', dirty:{}, rev:52, pub:'idle', state:'default' };
+
+/* ---------- 工具 ---------- */
+function h(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+  return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function toast(t){ var el=document.getElementById('toast'); el.textContent=t; el.classList.add('on');
+  clearTimeout(el._t); el._t=setTimeout(function(){el.classList.remove('on')},1800); }
+function $(id){ return document.getElementById(id); }
+
+/* ---------- 左树 ---------- */
+function renderTree(){
+  var q = ($('q').value||'').trim().toLowerCase();
+  var html='';
+  ['service','group'].forEach(function(k){
+    var site=DATA[k], pages=site.pages.filter(function(p){
+      return !q || p.name.toLowerCase().indexOf(q)>=0;
+    });
+    if(!pages.length) return;
+    html += '<div class="site'+(S['closed_'+k]?' closed':'')+'" data-site="'+k+'">'
+      + '<div class="h"><span class="caret">▼</span>'+h(site.name)+'</div><div class="pages">';
+    pages.forEach(function(p,i){
+      var id=k+'|'+site.pages.indexOf(p);
+      html += '<button class="pg'+(S.page===id?' on':'')+'" data-id="'+id+'">'
+        + h(p.name)+'<span class="cnt">'+p.fields.length+'</span></button>';
+    });
+    html += '</div></div>';
+  });
+  $('treeBody').innerHTML = html || '<div class="note" style="padding:12px 8px">没有匹配的页面。试试「产品」「基地」「首页」。</div>';
+}
+document.addEventListener('click', function(e){
+  var hd = e.target.closest('.site>.h');
+  if(hd){ var k=hd.parentNode.dataset.site; S['closed_'+k]=!S['closed_'+k]; renderTree(); return; }
+  var pg = e.target.closest('.pg');
+  if(pg){ S.page = pg.dataset.id; renderTree(); renderEditor(); }
+});
+$('q').addEventListener('input', renderTree);
+
+/* ---------- 中栏：字段渲染 ---------- */
+function pageObj(){
+  if(!S.page) return null;
+  var parts=S.page.split('|'), site=DATA[parts[0]];
+  return { site:parts[0], p:site.pages[+parts[1]] };
+}
+function fldWrap(f, ctrl, idx){
+  return '<div class="fld"><label>'+h(f.label)+'</label>'+ctrl
+    + (f.hint?'<div class="hint">'+h(f.hint)+'</div>':'')+'</div>';
+}
+function keyOf(pi,fi){ return pi+'.'+fi; }
+function val(pi,fi,def){ var k=keyOf(pi,fi); return k in S.dirty ? S.dirty[k] : def; }
+
+function renderField(f, pi, fi){
+  var i=' data-p="'+pi+'" data-f="'+fi+'"';
+  switch(f.type){
+    case 'text':
+      return fldWrap(f,'<input'+i+' value="'+h(val(pi,fi,f.v||''))+'">');
+    case 'longtext':
+      return fldWrap(f,'<textarea'+i+' rows="3">'+h(val(pi,fi,f.v||''))+'</textarea>');
+    case 'image':
+      return fldWrap(f,'<div class="imgbox"><div class="thumb">示意图</div>'
+        +'<div style="display:flex;gap:6px;flex-wrap:wrap"><button>上传新图片</button>'
+        +'<button>从图库选择</button><button class="danger">清除</button>'
+        +'<div class="hint" style="width:100%">建议 640×760 以上；上传后自动压缩到最长边 1920 并转 WebP。</div></div></div>');
+    case 'number':
+      return fldWrap(f,'<input'+i+' type="number" style="max-width:140px" value="'+(f.v==null?160:f.v)+'">');
+    case 'tags':
+      var tg = (f.v||[]).slice(0,6);
+      return fldWrap(f,'<input'+i+' value="'+h((f.v||[]).join(', '))+'">'
+        + (tg.length?'<div class="chips">'+tg.map(function(t){return '<span class="chip">'+h(t)+'</span>';}).join('')+'</div>':''));
+    case 'stats':
+      var st = (f.names&&f.names.length?f.names:['指标一','指标二','指标三','指标四']).slice(0,4);
+      return fldWrap(f,'<div class="stats">'
+        +st.map(function(s,j){
+          return '<div class="stat"><input value="'+h(j===0?'1929':(j===1?'58':(j===2?'29':'5')))+'">'
+            +'<input class="unit" value="'+h(s)+'"></div>';
+        }).join('')+'</div>');
+    case 'paras':
+      var rows='';
+      var nm = (f.names&&f.names.length) ? f.names : [];
+      var vals = Array.isArray(f.v) ? f.v : [];
+      var n = Math.max(nm.length, vals.length, 3);
+      for(var r=0;r<n;r++){
+        var head = nm[r] ? '<div style="font-size:11.5px;color:var(--muted);margin-bottom:3px">'+h(nm[r])+'</div>' : '';
+        rows += '<div class="row"><div class="no">'+(r+1)+'</div><div style="flex:1">'+head
+          +'<textarea rows="2" placeholder="第 '+(r+1)+' 条内容">'+h(vals[r]||'')+'</textarea></div>'
+          +'<div class="acts"><button title="上移">↑</button><button title="下移">↓</button>'
+          +'<button class="danger" title="删除">×</button></div></div>';
+      }
+      return fldWrap(f, rows + '<button style="margin-top:4px">+ 添加一条</button>');
+    case 'cells':
+      return fldWrap(f,'<div class="stats">'
+        +[['公司全称','中开数据要素（山东）有限公司'],['成立时间','2021'],['总部','山东日照'],['定位','数据要素服务商']].map(function(c){
+          return '<div class="stat" style="flex-direction:column;align-items:flex-start;gap:2px">'
+            +'<input class="unit" value="'+h(c[0])+'" style="width:70px">'
+            +'<input value="'+h(c[1])+'" style="width:190px"></div>';
+        }).join('')+'</div>');
+    case 'blocks':
+      var bn = (f.names&&f.names.length?f.names:['区块一','区块二','区块三','区块四']).slice(0,4);
+      var bl='';
+      for(var b=0;b<bn.length;b++){
+        bl += '<div class="card" style="margin-bottom:8px"><div class="row"><div class="no">'+(b+1)+'</div>'
+          +'<div style="flex:1"><input placeholder="块标题" value="'+h(bn[b])+'">'
+          +'<textarea rows="2" placeholder="描述"></textarea>'
+          +'<input placeholder="要点（每行一条）" style="margin-top:4px">'
+          +'<div class="imgbox" style="margin-top:6px"><div class="thumb" style="width:88px;height:50px">配图</div>'
+          +'<button style="align-self:center">更换图片</button></div></div>'
+          +'<div class="acts"><button>↑</button><button>↓</button><button class="danger">×</button></div></div></div>';
+      }
+      return fldWrap(f, bl+'<button>+ 添加区块</button>');
+    case 'tabs':
+      var tn = (f.names&&f.names.length?f.names:['服务为本','技术驱动','长期主义']);
+      return fldWrap(f,'<div style="display:flex;gap:6px;margin-bottom:6px">'
+        +tn.map(function(t,j){return '<button class="'+(j===0?'primary':'')+'">'+h(t)+'</button>';}).join('')
+        +'</div><textarea rows="3"></textarea>');
+    case 'milestones':
+      return fldWrap(f,'<div class="row"><div class="no">1</div><div style="flex:1;display:flex;gap:6px">'
+        +'<input value="2021" style="width:90px"><input value="公司成立"></div>'
+        +'<div class="acts"><button>↑</button><button>↓</button><button class="danger">×</button></div></div>'
+        +'<div class="row"><div class="no">2</div><div style="flex:1;display:flex;gap:6px">'
+        +'<input value="2023" style="width:90px"><input value="首个基地投产"></div>'
+        +'<div class="acts"><button>↑</button><button>↓</button><button class="danger">×</button></div></div>'
+        +'<button style="margin-top:4px">+ 添加节点</button>');
+    case 'news':
+    case 'news_page':
+      return fldWrap(f,'<div class="card"><div class="row"><div style="flex:1">'
+        +'<input value="什么是数据标注？一文读懂人工智能背后的「数据燃料」">'
+        +'<div class="hint" style="margin-top:4px">2026-04-15 · 科普知识 · 正文 8 块（段落 / 小标题 / 图片）</div></div>'
+        +'<div class="acts"><button>编辑</button><button class="danger">删除</button></div></div></div>'
+        +'<button>+ 新增文章</button>');
+    default:
+      return fldWrap(f,'<input'+i+' value="">');
+  }
+}
+
+function renderEditor(){
+  var o=pageObj();
+  if(!o){ $('editor').innerHTML='<div class="empty"><h3>从左边选一个页面</h3>'
+    +'<p class="note">左边是官网真实的 41 页信息架构。选一页，这里会按字段类型渲染出对应的编辑控件。</p></div>'; return; }
+  var p=o.p;
+  var head='<div class="crumb">'+ (o.site==='service'?'服务官网':'集团官网') +' › <b>'+h(p.name)+'</b></div>'
+    +'<div class="h1">'+h(p.name)+'</div>'
+    +'<div class="meta"><span class="tag">'+p.fields.length+' 个字段</span>'
+    +'<span>页面文件 '+(p.file||'—')+'</span>'
+    +'<button class="ghost" id="btnViewSite">在网站中预览 ↗</button></div>';
+  if(S.state==='empty' && p.fields.length===0){
+    $('editor').innerHTML=head+'<div class="empty"><h3>这个页面还没有内容</h3>'
+      +'<p class="note">点右上「新增产品」或「导入内容」开始。也可以从现有产品复制一份作为模板。</p></div>';
+    bind(); return;
+  }
+  var body='';
+  if(S.state==='empty'){
+    body='<div class="empty" style="padding:40px 20px"><h3>还没有产品</h3>'
+      +'<p class="note">点右上「+ 新增产品」开始，或先从现有产品复制一个。</p>'
+      +'<button class="primary" style="margin-top:10px">+ 新增产品</button></div>';
+  }else{
+    p.fields.forEach(function(f,i){ body += renderField(f,0,i); });
+  }
+  $('editor').innerHTML=head+body;
+  bind();
+}
+
+function bind(){
+  var ed=$('editor');
+  ed.querySelectorAll('input,textarea').forEach(function(el){
+    el.addEventListener('input',function(){
+      var p=el.dataset.p, f=el.dataset.f;
+      if(p==null) return;
+      S.dirty[keyOf(p,f)]=el.value;
+      updateDirty(); calcImpact();
+    });
+  });
+  var vs=$('btnViewSite');
+  if(vs) vs.onclick=function(){ toast('打开整站预览（只读，不影响线上）'); };
+}
+
+/* ---------- 未发布修改 ---------- */
+function updateDirty(){
+  var n=Object.keys(S.dirty).length;
+  $('dirtyN').textContent=n;
+  $('dirty').classList.toggle('on', n>0 || S.state==='dirty');
+}
+
+/* ---------- 影响面 ---------- */
+function calcImpact(){
+  var f=Object.keys(S.dirty)[0];
+  var o=pageObj(); if(!o) return;
+  var name=(o.p.fields[+f.split('.')[1]]||{}).label||'字段';
+  var box=$('impact');
+  if(!Object.keys(S.dirty).length){
+    box.innerHTML='改一个字段后，这里显示会重建哪些页面、为什么。'; return; }
+  var isGlobal = (o.p.name.indexOf('全站通用')>=0);
+  if(isGlobal){
+    box.innerHTML='<div class="banner ok on" style="margin:0 0 8px">改动字段：'+h(name)+'</div>'
+      +'<div class="note"><b>判定：全量重建 41 页</b><br>原因：全站通用信息出现在每个页面的页脚与联系页，任何一处改动都会影响全部页面。<br>'
+      +'这不是性能缺陷，是正确性要求。</div>';
+  }else{
+    box.innerHTML='<div class="banner ok on" style="margin:0 0 8px">改动字段：'+h(name)+'</div>'
+      +'<div class="note"><b>判定：增量重建 1 页</b><br>目标：'+h(o.p.name)+'.html<br>'
+      +'其余 40 页文件不会被触碰（mtime 与字节都不变）。</div>';
+  }
+}
+
+/* ---------- 发布状态机 ---------- */
+function steps(active, failed){
+  var all=['读取内容并解析','计算影响面','备份 41 页 + 内容','构建页面','刷新 sitemap / robots'];
+  var html='';
+  all.forEach(function(t,i){
+    var cls = i<active ? 'done' : (i===active ? 'run' : '');
+    var ic = i<active ? '✓' : (i===active ? '●' : '○');
+    if(failed && i===active){ cls='err'; ic='✗'; }
+    html += '<div class="step '+cls+'"><span class="ic">'+ic+'</span><span>'+t+'</span></div>';
+  });
+  return html;
+}
+function resetPub(){
+  $('steps').innerHTML=steps(-1); $('bar').style.width='0';
+  $('mode').textContent='—'; $('pages').textContent='—'; $('cost').textContent='—';
+  $('pubBanner').className='banner';
+}
+
+function publish(){
+  if(S.pub==='running'){ return; }
+  var isGlobal = (pageObj() && pageObj().p.name.indexOf('全站通用')>=0);
+  var pages = isGlobal ? 41 : 1;
+  var cost  = isGlobal ? '0.22s' : '0.07s';
+  S.pub='running'; resetPub();
+
+  if(S.state==='fail'){
+    $('mode').textContent='incremental'; $('pages').textContent='27 / 41';
+    $('steps').innerHTML=steps(3,true);
+    $('pubBanner').className='banner err on';
+    $('pubBanner').innerHTML='<b>发布已中止，站点已回滚到发布前状态。</b><br>'
+      +'41 个页面文件与发布前完全一致，线上没有变化。<br><br>'
+      +'失败页：<b>product-geo.html</b><br>原因：核心能力卡需要 4 条，当前 3 条。<br>'
+      +'<button style="margin-top:8px" onclick="toast(\'跳到产品页的能力卡字段\')">去修这 1 处</button>';
+    S.pub='idle'; toast('发布失败，已自动回滚'); return;
+  }
+
+  var i=0, total=5;
+  var timer=setInterval(function(){
+    if(i>=total){
+      clearInterval(timer);
+      $('steps').innerHTML=steps(5); $('bar').style.width='100%';
+      $('mode').textContent=isGlobal?'full':'incremental';
+      $('pages').textContent=pages; $('cost').textContent=cost;
+      $('pubBanner').className='banner ok on';
+      $('pubBanner').innerHTML='<b>已上线 '+pages+' 页，用时 '+cost+'。</b><br>'
+        +'<button style="margin-top:6px" onclick="toast(\'打开线上页面\')">查看线上</button>';
+      S.pub='idle'; S.dirty={}; S.rev++; updateDirty();
+      toast('发布成功 · '+pages+' 页 / '+cost);
+      return;
+    }
+    $('steps').innerHTML=steps(i);
+    $('bar').style.width=((i+1)/total*90)+'%';
+    i++;
+  },260);
+}
+
+/* ---------- 交互 ---------- */
+$('btnSave').onclick=function(){
+  if(S.state==='conflict'){
+    $('ovBody').innerHTML='<h3>⚠ 有更新的修改</h3>'
+      +'<p>admin 在 16:02 保存了 1 处改动：</p>'
+      +'<div class="diff">首页 › 首屏主标语<br>「数据驱动智能…」→「数据驱动智能，赋能未来」</div>'
+      +'<p><b>你的修改没有丢失。</b>选择下一步：</p>'
+      +'<div class="acts"><button onclick="closeOv()">刷新并重做</button>'
+      +'<button class="danger" onclick="closeOv();toast(\'已强制覆盖（同事的改动被抹掉）\')">强制覆盖</button></div>';
+    $('ov').classList.add('on'); return;
+  }
+  var n=Object.keys(S.dirty).length;
+  S.rev++;
+  toast(n?('已保存 '+n+' 处修改（未发布）'):'没有修改需要保存');
+  S.dirty={}; updateDirty();
+};
+$('btnPublish').onclick=publish;
+$('btnPreview').onclick=function(){
+  toast('已生成整站预览 → _preview/index.html（线上零字节变动）');
+};
+$('btnUser').onclick=function(){
+  $('ovBody').innerHTML='<h3>账号</h3><p>admin · 管理员<br>会话有效期 12 小时 · 上次登录 10:24 · IP 127.0.0.1</p>'
+    +'<div class="acts"><button onclick="closeOv()">关闭</button><button class="danger" onclick="closeOv()">退出登录</button></div>';
+  $('ov').classList.add('on');
+};
+function closeOv(){ $('ov').classList.remove('on'); }
+$('ov').onclick=function(e){ if(e.target===$('ov')) closeOv(); };
+
+$('states').onclick=function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  [].forEach.call($('states').children,function(x){x.classList.remove('on')});
+  b.classList.add('on'); S.state=b.dataset.s;
+  if(S.state==='dirty'){ S.dirty['0.0']='改动'; updateDirty(); }
+  if(S.state==='default'){ S.dirty={}; updateDirty(); resetPub(); }
+  if(S.state==='conflict'){ toast('演示：此时另一个浏览器保存了内容'); }
+  if(S.state==='fail'){ toast('演示：点「保存并发布」看失败与回滚'); }
+  renderEditor();
+};
+
+/* ---------- 启动 ---------- */
+renderTree(); renderEditor(); resetPub(); updateDirty();
+/* 深链：#service|5  或  #group|2 或 #state=fail */
+(function(){
+  var hs = decodeURIComponent(location.hash.slice(1));
+  if(!hs){ S.page='service|0'; }
+  else if(hs.indexOf('state=')===0){ S.page='service|0'; S.state=hs.slice(6);
+    [].forEach.call($('states').children,function(x){ x.classList.toggle('on', x.dataset.s===S.state); });
+  }
+  else { S.page = hs; }
+  renderTree(); renderEditor();
+  /* 深链带 state=fail 时自动跑一次发布，直接看到失败与回滚 */
+  if(S.state==='fail'){ setTimeout(publish, 350); }
+})();
+</script>
+</body>
+</html>

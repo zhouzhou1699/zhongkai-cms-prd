@@ -1,0 +1,1964 @@
+[
+ {
+  "page": "全站",
+  "path": "site.phone",
+  "label": "客服电话",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.email",
+  "label": "企业邮箱",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.address",
+  "label": "详细地址",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.icp",
+  "label": "ICP 备案号",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.worktime",
+  "label": "工作时间",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.footer_about_service",
+  "label": "页脚 · 关于中开服务",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.footer_about_group",
+  "label": "页脚 · 关于中开集团",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.footer_biz_service",
+  "label": "页脚 · 核心业务（服务官网）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.footer_biz_group",
+  "label": "页脚 · 业务板块（集团官网）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.footer_links_service",
+  "label": "页脚 · 快速链接（服务官网）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "全站",
+  "path": "site.footer_links_group",
+  "label": "页脚 · 快速链接（集团官网）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.hero_title",
+  "label": "首屏主标语",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.hero_desc",
+  "label": "首屏副标语",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.intro_image",
+  "label": "走进我们 · 配图",
+  "type": "image",
+  "group": "服务官网首页",
+  "hint": "建议尺寸 640×760 以上，不上传时显示默认蓝色装饰背景",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.intro_badge",
+  "label": "走进我们 · 角标",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.intro_h3",
+  "label": "走进我们 · 小标题",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.intro_paras",
+  "label": "走进我们 · 正文段落",
+  "type": "paras",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.intro_cells",
+  "label": "走进我们 · 能力格",
+  "type": "cells",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.stats",
+  "label": "首屏数据指标",
+  "type": "stats",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.philosophy_tabs",
+  "label": "企业理念 Tab",
+  "type": "tabs",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "index.html",
+  "path": "home_service.milestones",
+  "label": "发展历程",
+  "type": "milestones",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.hero_title",
+  "label": "首屏主标语",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.hero_desc",
+  "label": "首屏副标语",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.intro_image",
+  "label": "走进我们 · 配图",
+  "type": "image",
+  "group": "集团官网首页",
+  "hint": "建议尺寸 640×760 以上，不上传时显示默认蓝色装饰背景",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.intro_badge",
+  "label": "走进我们 · 角标",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.intro_h3",
+  "label": "走进我们 · 小标题",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.intro_paras",
+  "label": "走进我们 · 正文段落",
+  "type": "paras",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.intro_cells",
+  "label": "走进我们 · 能力格",
+  "type": "cells",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.stats",
+  "label": "首屏数据指标",
+  "type": "stats",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.philosophy_tabs",
+  "label": "企业理念 Tab",
+  "type": "tabs",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.milestones",
+  "label": "发展历程",
+  "type": "milestones",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group.html",
+  "path": "home_group.news",
+  "label": "中开资讯（首页四条）",
+  "type": "news",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-news.html",
+  "path": "news_page.cats",
+  "label": "中开资讯 · 分类与条目",
+  "type": "news_page",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.name",
+  "label": "基地名称",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.alias",
+  "label": "别名",
+  "type": "text",
+  "group": null,
+  "hint": "与名称相同则不显示别名行",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.prov",
+  "label": "所在省",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.deg",
+  "label": "头图色调角度",
+  "type": "number",
+  "group": null,
+  "hint": "无头图时渐变背景的角度，90-200 之间",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.tags",
+  "label": "标签",
+  "type": "tags",
+  "group": null,
+  "hint": "逗号分隔",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.desc",
+  "label": "基地简介（一句话）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.image",
+  "label": "基地头图",
+  "type": "image",
+  "group": null,
+  "hint": "建议尺寸 640×760 以上，不上传时显示默认渐变背景",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.nums",
+  "label": "基地数据指标",
+  "type": "stats",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.caps",
+  "label": "核心职能卡",
+  "type": "cells",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-rizhao.html",
+  "path": "bases.group-base-rizhao.biz",
+  "label": "入驻与业务方向",
+  "type": "paras",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.name",
+  "label": "基地名称",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.alias",
+  "label": "别名",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.prov",
+  "label": "所在省",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.deg",
+  "label": "头图色调角度",
+  "type": "number",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.tags",
+  "label": "标签",
+  "type": "tags",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.desc",
+  "label": "基地简介（一句话）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.image",
+  "label": "基地头图",
+  "type": "image",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.nums",
+  "label": "基地数据指标",
+  "type": "stats",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.caps",
+  "label": "核心职能卡",
+  "type": "cells",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-opcrizhao.html",
+  "path": "bases.group-base-opcrizhao.biz",
+  "label": "入驻与业务方向",
+  "type": "paras",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.name",
+  "label": "基地名称",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.alias",
+  "label": "别名",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.prov",
+  "label": "所在省",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.deg",
+  "label": "头图色调角度",
+  "type": "number",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.tags",
+  "label": "标签",
+  "type": "tags",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.desc",
+  "label": "基地简介（一句话）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.image",
+  "label": "基地头图",
+  "type": "image",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.nums",
+  "label": "基地数据指标",
+  "type": "stats",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.caps",
+  "label": "核心职能卡",
+  "type": "cells",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou.html",
+  "path": "bases.group-base-zhangjiakou.biz",
+  "label": "入驻与业务方向",
+  "type": "paras",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.name",
+  "label": "基地名称",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.alias",
+  "label": "别名",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.prov",
+  "label": "所在省",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.deg",
+  "label": "头图色调角度",
+  "type": "number",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.tags",
+  "label": "标签",
+  "type": "tags",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.desc",
+  "label": "基地简介（一句话）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.image",
+  "label": "基地头图",
+  "type": "image",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.nums",
+  "label": "基地数据指标",
+  "type": "stats",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.caps",
+  "label": "核心职能卡",
+  "type": "cells",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-zhangjiakou-opc.html",
+  "path": "bases.group-base-zhangjiakou-opc.biz",
+  "label": "入驻与业务方向",
+  "type": "paras",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.name",
+  "label": "基地名称",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.alias",
+  "label": "别名",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.prov",
+  "label": "所在省",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.deg",
+  "label": "头图色调角度",
+  "type": "number",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.tags",
+  "label": "标签",
+  "type": "tags",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.desc",
+  "label": "基地简介（一句话）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.image",
+  "label": "基地头图",
+  "type": "image",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.nums",
+  "label": "基地数据指标",
+  "type": "stats",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.caps",
+  "label": "核心职能卡",
+  "type": "cells",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-yichang.html",
+  "path": "bases.group-base-yichang.biz",
+  "label": "入驻与业务方向",
+  "type": "paras",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.name",
+  "label": "基地名称",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.alias",
+  "label": "别名",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.prov",
+  "label": "所在省",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.deg",
+  "label": "头图色调角度",
+  "type": "number",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.tags",
+  "label": "标签",
+  "type": "tags",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.desc",
+  "label": "基地简介（一句话）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.image",
+  "label": "基地头图",
+  "type": "image",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.nums",
+  "label": "基地数据指标",
+  "type": "stats",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.caps",
+  "label": "核心职能卡",
+  "type": "cells",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-jiaxing.html",
+  "path": "bases.group-base-jiaxing.biz",
+  "label": "入驻与业务方向",
+  "type": "paras",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.name",
+  "label": "基地名称",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.alias",
+  "label": "别名",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.prov",
+  "label": "所在省",
+  "type": "text",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.deg",
+  "label": "头图色调角度",
+  "type": "number",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.tags",
+  "label": "标签",
+  "type": "tags",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.desc",
+  "label": "基地简介（一句话）",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.image",
+  "label": "基地头图",
+  "type": "image",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.nums",
+  "label": "基地数据指标",
+  "type": "stats",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.caps",
+  "label": "核心职能卡",
+  "type": "cells",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group-base-shangrao.html",
+  "path": "bases.group-base-shangrao.biz",
+  "label": "入驻与业务方向",
+  "type": "paras",
+  "group": null,
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "products.html",
+  "path": "pages.products.sw_descs",
+  "label": "软件产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 12 款软件产品；文字中的 <br> 表示换行",
+  "names": 12
+ },
+ {
+  "page": "products.html",
+  "path": "pages.products.hw_descs",
+  "label": "硬件产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 3 款硬件产品",
+  "names": 3
+ },
+ {
+  "page": "solutions.html",
+  "path": "pages.solutions.blocks",
+  "label": "四大解决方案 · 简介与要点",
+  "type": "blocks",
+  "group": "服务官网",
+  "hint": "每个方案一段简介 + 三条要点；要点可增删排序",
+  "names": 4
+ },
+ {
+  "page": "training.html",
+  "path": "pages.training.blocks",
+  "label": "三大实训板块 · 标题、简介、要点与配图",
+  "type": "blocks",
+  "group": "服务官网",
+  "hint": "每块一个标题 + 一段简介 + 若干要点 + 一张配图；配图可上传新图、从图片库选择或清除（清除后该块显示深蓝渐变底），板块本身也可整组增删与排序",
+  "names": 3
+ },
+ {
+  "page": "ai_solutions.html",
+  "path": "pages.ai_solutions.dev_descs",
+  "label": "软件开发 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 9 个系统",
+  "names": 9
+ },
+ {
+  "page": "ai_solutions.html",
+  "path": "pages.ai_solutions.agent_descs",
+  "label": "智能体 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 3 个智能体",
+  "names": 3
+ },
+ {
+  "page": "ai_solutions.html",
+  "path": "pages.ai_solutions.edge_descs",
+  "label": "边缘部署 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 5 项",
+  "names": 5
+ },
+ {
+  "page": "data_factory.html",
+  "path": "pages.data_factory.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "data_factory.html",
+  "path": "pages.data_factory.cards",
+  "label": "业务环节卡片",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 6 个环节",
+  "names": 6
+ },
+ {
+  "page": "data_factory.html",
+  "path": "pages.data_factory.stats",
+  "label": "产能数据指标",
+  "type": "stats",
+  "group": "服务官网",
+  "hint": "数字带滚动计数动画",
+  "names": 0
+ },
+ {
+  "page": "model_factory.html",
+  "path": "pages.model_factory.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "model_factory.html",
+  "path": "pages.model_factory.cards",
+  "label": "业务环节卡片",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 3 项",
+  "names": 3
+ },
+ {
+  "page": "customer_base.html",
+  "path": "pages.customer_base.detail",
+  "label": "详细介绍",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "customer_base.html",
+  "path": "pages.customer_base.cards",
+  "label": "业务环节卡片",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 3 项",
+  "names": 3
+ },
+ {
+  "page": "service_about.html",
+  "path": "pages.service_about.who",
+  "label": "我们是谁 · 两段话",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "service_about.html",
+  "path": "pages.service_about.profile",
+  "label": "公司简介",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "service_about.html",
+  "path": "pages.service_about.biz",
+  "label": "业务布局",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "service_about.html",
+  "path": "pages.service_about.caps",
+  "label": "服务能力清单",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 条能力",
+  "names": 4
+ },
+ {
+  "page": "group_about.html",
+  "path": "pages.group_about.profile_paras",
+  "label": "集团概况",
+  "type": "paras",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_about.html",
+  "path": "pages.group_about.chairman_paras",
+  "label": "董事长致辞",
+  "type": "paras",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_about.html",
+  "path": "pages.group_about.culture_paras",
+  "label": "企业文化",
+  "type": "paras",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_about.html",
+  "path": "pages.group_about.org_paras",
+  "label": "组织架构",
+  "type": "paras",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_about.html",
+  "path": "pages.group_about.honor_paras",
+  "label": "资质荣誉",
+  "type": "paras",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_about.html",
+  "path": "pages.group_about.media_paras",
+  "label": "媒体报道",
+  "type": "paras",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_business.html",
+  "path": "pages.group_business.blocks",
+  "label": "七大业务板块 · 要点",
+  "type": "blocks",
+  "group": "集团官网",
+  "hint": "每个板块三条要点；要点可增删排序",
+  "names": 7
+ },
+ {
+  "page": "group_business.html",
+  "path": "pages.group_business.svc_descs",
+  "label": "相关服务产品 · 卡片简介",
+  "type": "paras",
+  "group": "集团官网",
+  "hint": "按顺序对应前 3 款软件产品",
+  "names": 3
+ },
+ {
+  "page": "product-annotation.html",
+  "path": "pages.product-annotation.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-annotation.html",
+  "path": "pages.product-annotation.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-annotation.html",
+  "path": "pages.product-annotation.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-annotation.html",
+  "path": "pages.product-annotation.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-annotation.html",
+  "path": "pages.product-annotation.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-3d.html",
+  "path": "pages.product-3d.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-3d.html",
+  "path": "pages.product-3d.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-3d.html",
+  "path": "pages.product-3d.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-3d.html",
+  "path": "pages.product-3d.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-3d.html",
+  "path": "pages.product-3d.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-edu.html",
+  "path": "pages.product-edu.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-edu.html",
+  "path": "pages.product-edu.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-edu.html",
+  "path": "pages.product-edu.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-edu.html",
+  "path": "pages.product-edu.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-edu.html",
+  "path": "pages.product-edu.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-model-train.html",
+  "path": "pages.product-model-train.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-model-train.html",
+  "path": "pages.product-model-train.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-model-train.html",
+  "path": "pages.product-model-train.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-model-train.html",
+  "path": "pages.product-model-train.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-model-train.html",
+  "path": "pages.product-model-train.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-digital-human.html",
+  "path": "pages.product-digital-human.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-digital-human.html",
+  "path": "pages.product-digital-human.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-digital-human.html",
+  "path": "pages.product-digital-human.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-digital-human.html",
+  "path": "pages.product-digital-human.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-digital-human.html",
+  "path": "pages.product-digital-human.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-short-video.html",
+  "path": "pages.product-short-video.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-short-video.html",
+  "path": "pages.product-short-video.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-short-video.html",
+  "path": "pages.product-short-video.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-short-video.html",
+  "path": "pages.product-short-video.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-short-video.html",
+  "path": "pages.product-short-video.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-geo.html",
+  "path": "pages.product-geo.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-geo.html",
+  "path": "pages.product-geo.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-geo.html",
+  "path": "pages.product-geo.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-geo.html",
+  "path": "pages.product-geo.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-geo.html",
+  "path": "pages.product-geo.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-smart-park.html",
+  "path": "pages.product-smart-park.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-smart-park.html",
+  "path": "pages.product-smart-park.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-smart-park.html",
+  "path": "pages.product-smart-park.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-smart-park.html",
+  "path": "pages.product-smart-park.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-smart-park.html",
+  "path": "pages.product-smart-park.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-ai-comic.html",
+  "path": "pages.product-ai-comic.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-ai-comic.html",
+  "path": "pages.product-ai-comic.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-ai-comic.html",
+  "path": "pages.product-ai-comic.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-ai-comic.html",
+  "path": "pages.product-ai-comic.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-ai-comic.html",
+  "path": "pages.product-ai-comic.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-anno-train.html",
+  "path": "pages.product-anno-train.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-anno-train.html",
+  "path": "pages.product-anno-train.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-anno-train.html",
+  "path": "pages.product-anno-train.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-anno-train.html",
+  "path": "pages.product-anno-train.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-anno-train.html",
+  "path": "pages.product-anno-train.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-contest.html",
+  "path": "pages.product-contest.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-contest.html",
+  "path": "pages.product-contest.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-contest.html",
+  "path": "pages.product-contest.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-contest.html",
+  "path": "pages.product-contest.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-contest.html",
+  "path": "pages.product-contest.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-edu-online.html",
+  "path": "pages.product-edu-online.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-edu-online.html",
+  "path": "pages.product-edu-online.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-edu-online.html",
+  "path": "pages.product-edu-online.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-edu-online.html",
+  "path": "pages.product-edu-online.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-edu-online.html",
+  "path": "pages.product-edu-online.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-edge-box.html",
+  "path": "pages.product-edge-box.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-edge-box.html",
+  "path": "pages.product-edge-box.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-edge-box.html",
+  "path": "pages.product-edge-box.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-edge-box.html",
+  "path": "pages.product-edge-box.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-edge-box.html",
+  "path": "pages.product-edge-box.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-ai-camera.html",
+  "path": "pages.product-ai-camera.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-ai-camera.html",
+  "path": "pages.product-ai-camera.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-ai-camera.html",
+  "path": "pages.product-ai-camera.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-ai-camera.html",
+  "path": "pages.product-ai-camera.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-ai-camera.html",
+  "path": "pages.product-ai-camera.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "product-ai-server.html",
+  "path": "pages.product-ai-server.intro",
+  "label": "产品简介（第一段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-ai-server.html",
+  "path": "pages.product-ai-server.detail2",
+  "label": "产品详细介绍（第二段）",
+  "type": "longtext",
+  "group": "服务官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "product-ai-server.html",
+  "path": "pages.product-ai-server.feats",
+  "label": "核心能力 · 卡片说明",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 张能力卡；卡片标题与说明均可编辑",
+  "names": 4
+ },
+ {
+  "page": "product-ai-server.html",
+  "path": "pages.product-ai-server.specs",
+  "label": "产品规格 · 参数值",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应规格表 6 行；参数名与参数值均可编辑",
+  "names": 6
+ },
+ {
+  "page": "product-ai-server.html",
+  "path": "pages.product-ai-server.related_descs",
+  "label": "相关产品 · 卡片简介",
+  "type": "paras",
+  "group": "服务官网",
+  "hint": "按顺序对应 4 个相关产品；仅标题与简介可改，跳转链接固定",
+  "names": 4
+ },
+ {
+  "page": "group_bases.html",
+  "path": "pages.group_bases.tit",
+  "label": "页面大标题",
+  "type": "text",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_bases.html",
+  "path": "pages.group_bases.desc",
+  "label": "标题下方描述",
+  "type": "text",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_bases.html",
+  "path": "pages.group_bases.head_sub",
+  "label": "栏目标识（英文小字）",
+  "type": "text",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_bases.html",
+  "path": "pages.group_bases.head_h2",
+  "label": "栏目标题",
+  "type": "text",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_bases.html",
+  "path": "pages.group_bases.head_desc",
+  "label": "栏目描述",
+  "type": "text",
+  "group": "集团官网",
+  "hint": "留空则自动按基地所在省生成（如：山东、河北、湖北、浙江、江西五省布局）",
+  "names": 0
+ },
+ {
+  "page": "group_bases.html",
+  "path": "pages.group_bases.cta_tit",
+  "label": "底部咨询 · 标题",
+  "type": "text",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ },
+ {
+  "page": "group_bases.html",
+  "path": "pages.group_bases.cta_desc",
+  "label": "底部咨询 · 说明",
+  "type": "text",
+  "group": "集团官网",
+  "hint": "",
+  "names": 0
+ }
+]
