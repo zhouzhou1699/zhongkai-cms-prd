@@ -42,3 +42,5 @@
 | [proto-product.png](proto-product.png) | 产品详情页的 5 个字段（真实内容） |
 | [proto-fail.png](proto-fail.png) | 发布失败 + 自动回滚的提示形态 |
 | [proto-publish.png](proto-publish.png) | 发布状态机初始态 |
+| [proto-live.png](proto-live.png) | GitHub Pages 上的在线原型（真实截图） |
+| [landing-live.png](landing-live.png) | GitHub Pages 上的项目落地页 |
