@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>运营后台登录 | 中开服务</title>
+<meta name="description" content="中开服务官网运营后台登录入口。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230052d9%22/><text x=%225%22 y=%2222%22 fill=%22white%22 font-family=%22Arial%22 font-size=%2214%22 font-weight=%22bold%22>ZK</text></svg>">
+<style>
+  :root{
+    --zk-blue:#0052d9;
+    --zk-blue-600:#0043b3;
+    --zk-sky:#188ef4;
+    --zk-cyan:#1dc8cc;
+    --ink:#0e1726;
+    --ink-2:#3c4859;
+    --ink-3:#6b7787;
+    --line:#e3e8f0;
+    --bg:#f5f7fb;
+    --radius:16px;
+    --shadow-lg:0 30px 70px -28px rgba(10,30,63,.45), 0 6px 20px -12px rgba(10,30,63,.25);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:var(--zk-blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- 两栏骨架 ---------- */
+  .auth{display:grid;grid-template-columns:1.05fr .95fr;min-height:100vh}
+
+  /* ---------- 左侧品牌区 ---------- */
+  .brand{
+    position:relative;overflow:hidden;isolation:isolate;
+    display:flex;flex-direction:column;justify-content:space-between;
+    padding:52px 56px;
+    color:#fff;
+    background:
+      radial-gradient(120% 120% at 0% 0%, #06306e 0%, #041d44 46%, #030f26 100%);
+  }
+  .brand::before{               /* 网格 */
+    content:"";position:absolute;inset:0;z-index:-1;opacity:.35;
+    background-image:
+      linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(90% 80% at 20% 10%, #000 30%, transparent 78%);
+    -webkit-mask-image:radial-gradient(90% 80% at 20% 10%, #000 30%, transparent 78%);
+  }
+  .orb{position:absolute;z-index:-1;border-radius:50%;filter:blur(60px);opacity:.55;
+       animation:float 18s var(--ease) infinite alternate}
+  .orb--a{width:420px;height:420px;right:-120px;top:-140px;
+          background:radial-gradient(circle,#188ef4,transparent 68%)}
+  .orb--b{width:360px;height:360px;left:-110px;bottom:-120px;
+          background:radial-gradient(circle,#1dc8cc,transparent 70%);animation-delay:-7s}
+  @keyframes float{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(26px,-30px,0) scale(1.08)}}
+
+  .brand__logo{display:flex;align-items:center;gap:14px}
+  .brand__mark{width:46px;height:46px;flex:none}
+  .brand__name{font-size:17px;font-weight:600;letter-spacing:.3px}
+  .brand__sub{font-size:12.5px;color:rgba(255,255,255,.55);letter-spacing:2.4px;text-transform:uppercase;margin-top:2px}
+
+  .brand__body{max-width:460px;margin:40px 0}
+  .brand__kicker{display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;letter-spacing:.6px;color:#9fd2ff;
+    border:1px solid rgba(157,210,255,.28);background:rgba(24,142,244,.10);
+    padding:5px 12px;border-radius:999px;margin-bottom:22px}
+  .brand__kicker i{width:6px;height:6px;border-radius:50%;background:var(--zk-cyan);
+    box-shadow:0 0 0 4px rgba(29,200,204,.18)}
+  .brand h1{margin:0 0 16px;font-size:34px;line-height:1.28;font-weight:600;letter-spacing:.5px}
+  .brand h1 em{font-style:normal;color:#8ecbff}
+  .brand p.lead{margin:0 0 30px;color:rgba(255,255,255,.66);font-size:14.5px;line-height:1.85}
+  .brand__list{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+  .brand__list li{display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.78)}
+  .brand__list svg{flex:none;margin-top:3px;color:var(--zk-cyan)}
+
+  .brand__foot{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:rgba(255,255,255,.42)}
+  .brand__foot a{color:rgba(255,255,255,.62)}
+  .brand__foot a:hover{color:#fff}
+
+  /* ---------- 右侧表单 ---------- */
+  .panel{
+    display:flex;align-items:center;justify-content:center;
+    padding:48px 32px;position:relative;
+  }
+  .panel::before{        /* 极淡的斜向光斑，避免右半边死白 */
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(70% 55% at 100% 0%, rgba(24,142,244,.10), transparent 70%);
+  }
+  .card{
+    position:relative;z-index:1;width:100%;max-width:404px;
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow-lg);
+    padding:38px 36px 30px;
+  }
+  .card__head{margin-bottom:26px}
+  .card__title{margin:0;font-size:22px;font-weight:600;letter-spacing:.4px;color:var(--ink)}
+  .card__desc{margin:8px 0 0;font-size:13px;color:var(--ink-3);line-height:1.7}
+
+  .field{margin-bottom:16px}
+  .field__label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-2);
+    letter-spacing:.3px;margin-bottom:7px}
+  .field__wrap{position:relative;display:flex;align-items:center}
+  .field__wrap svg{position:absolute;left:13px;color:#9aa5b4;pointer-events:none;transition:color .18s}
+  .input{
+    width:100%;height:48px;padding:0 14px 0 42px;
+    font-size:14.5px;color:var(--ink);background:#fbfcfe;
+    border:1px solid var(--line);border-radius:10px;outline:none;
+    transition:border-color .18s, box-shadow .18s, background .18s;
+  }
+  .input::placeholder{color:#aab4c2}
+  .input:hover{border-color:#cbd5e3}
+  .input:focus{border-color:var(--zk-blue);background:#fff;
+    box-shadow:0 0 0 3.5px rgba(0,82,217,.12)}
+  .field__wrap:focus-within svg{color:var(--zk-blue)}
+  .input--pw{padding-right:64px}
+
+  .eye{
+    position:absolute;right:6px;height:36px;padding:0 11px;
+    border:0;background:transparent;border-radius:8px;
+    font:inherit;font-size:12.5px;color:var(--ink-3);cursor:pointer;
+    transition:background .16s,color .16s;
+  }
+  .eye:hover{background:#eef3fb;color:var(--zk-blue)}
+  .eye:focus-visible{outline:2px solid var(--zk-blue);outline-offset:1px}
+
+  .row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 20px}
+  .check{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);cursor:pointer;user-select:none}
+  .check input{width:15px;height:15px;accent-color:var(--zk-blue);margin:0;cursor:pointer}
+  .hint{font-size:12.5px;color:var(--ink-3)}
+
+  .btn{
+    position:relative;width:100%;height:48px;border:0;border-radius:10px;
+    font:inherit;font-size:15px;font-weight:600;letter-spacing:2px;color:#fff;
+    background:linear-gradient(135deg,var(--zk-blue),var(--zk-sky));
+    cursor:pointer;overflow:hidden;
+    transition:transform .16s var(--ease), box-shadow .2s, filter .2s;
+    box-shadow:0 12px 26px -14px rgba(0,82,217,.85);
+  }
+  .btn:hover{filter:brightness(1.05);box-shadow:0 16px 30px -14px rgba(0,82,217,.95)}
+  .btn:active{transform:translateY(1px)}
+  .btn:focus-visible{outline:3px solid rgba(0,82,217,.28);outline-offset:2px}
+  .btn[disabled]{cursor:progress;filter:saturate(.75) brightness(.98)}
+  .btn__label{transition:opacity .18s}
+  .btn[disabled] .btn__label{opacity:0}
+  .spinner{
+    position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  }
+  .btn[disabled] .spinner{display:flex}
+  .spinner i{
+    width:19px;height:19px;border-radius:50%;
+    border:2px solid rgba(255,255,255,.35);border-top-color:#fff;
+    animation:spin .7s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .alert{
+    display:none;gap:10px;align-items:flex-start;
+    margin:0 0 18px;padding:11px 13px;border-radius:10px;
+    font-size:13px;line-height:1.6;
+    border:1px solid #f3c6c6;background:#fdf1f1;color:#a3312c;
+  }
+  .alert.is-on{display:flex}
+  .alert.is-warn{border-color:#f4d8a8;background:#fdf7ea;color:#8a5a10}
+  .alert svg{flex:none;margin-top:2px}
+  .alert b{font-weight:600}
+
+  .card__foot{
+    margin-top:24px;padding-top:18px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+    font-size:12.5px;color:var(--ink-3);
+  }
+  .card__foot .back{display:inline-flex;align-items:center;gap:5px}
+  .caps{
+    display:none;align-items:center;gap:6px;margin:-8px 0 14px;
+    font-size:12px;color:#8a5a10;
+  }
+  .caps.is-on{display:flex}
+
+  /* ---------- 响应式 ---------- */
+  @media (max-width:960px){
+    .auth{grid-template-columns:1fr}
+    .brand{padding:34px 26px 30px;min-height:auto}
+    .brand__body{margin:26px 0 8px}
+    .brand h1{font-size:25px}
+    .brand__list,.brand__foot{display:none}
+    .panel{padding:30px 20px 44px}
+    .card{padding:30px 24px 24px;box-shadow:0 18px 44px -24px rgba(10,30,63,.4)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .orb{animation:none}
+    *{transition:none !important;animation-duration:.001ms !important}
+  }
+</style>
+</head>
+<body>
+<main class="auth">
+
+  <!-- ============ 左：品牌区 ============ -->
+  <section class="brand" aria-label="中开服务">
+    <span class="orb orb--a" aria-hidden="true"></span>
+    <span class="orb orb--b" aria-hidden="true"></span>
+
+    <div class="brand__logo">
+      <svg class="brand__mark" viewBox="0 0 46 46" role="img" aria-label="ZK">
+        <defs>
+          <linearGradient id="zkMark" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0052d9"/><stop offset="1" stop-color="#188ef4"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="7" width="31" height="31" rx="7" fill="url(#zkMark)"/>
+        <circle cx="26.5" cy="12.5" r="2.6" fill="#1dc8cc"/>
+        <text x="5.5" y="29" fill="#fff" font-family="Montserrat,Arial" font-size="14"
+              font-weight="700" letter-spacing=".5">ZK</text>
+      </svg>
+      <div>
+        <div class="brand__name">中开服务</div>
+        <div class="brand__sub">Zhongkai · Content Studio</div>
+      </div>
+    </div>
+
+    <div class="brand__body">
+      <span class="brand__kicker"><i></i>运营内容中心 · 内部系统</span>
+      <h1>改完内容，<em>一分钟</em>上线官网。</h1>
+      <p class="lead">文案、图片、产品、基地、资讯都在这一个后台里维护：改完先「预览修改」看效果，确认无误再「发布到网站」，线上即刻生效。</p>
+      <ul class="brand__list">
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>所见即所得编辑，39 个页面共用一套内容真源</span>
+        </li>
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>发布前自动备份，历史版本可一键回滚</span>
+        </li>
+        <li>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>多人分账号协作，操作留痕可审计</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="brand__foot">
+      <span>© 2026 中开服务</span>
+      <a href="/">官网首页</a>
+      <a href="/products.html">产品超市</a>
+      <a href="/group.html">集团官网</a>
+    </div>
+  </section>
+
+  <!-- ============ 右：登录表单 ============ -->
+  <section class="panel">
+    <form class="card" id="login-form" novalidate autocomplete="on">
+      <div class="card__head">
+        <h2 class="card__title">登录运营后台</h2>
+        <p class="card__desc">请使用运营部发放的账号登录。连续输错会被临时锁定，稍等即可重试。</p>
+      </div>
+
+      <div class="alert" id="alert" role="alert" aria-live="polite">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16.5v.01"/></svg>
+        <span id="alert-text"></span>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="login-user">账号</label>
+        <div class="field__wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 20c.9-3.6 3.7-5.6 7.2-5.6s6.3 2 7.2 5.6"/></svg>
+          <input class="input" id="login-user" name="username" type="text"
+                 placeholder="请输入账号" value="admin" spellcheck="false"
+                 autocapitalize="off" autocomplete="username" required>
+        </div>
+      </div>
+
+      <div class="field" style="margin-bottom:12px">
+        <label class="field__label" for="login-pw">密码</label>
+        <div class="field__wrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.9" stroke-linecap="round"><rect x="4.2" y="10.4" width="15.6" height="9.4" rx="2.4"/><path d="M8.2 10.4V8a3.8 3.8 0 0 1 7.6 0v2.4"/></svg>
+          <input class="input input--pw" id="login-pw" name="password" type="password"
+                 placeholder="请输入密码" autocomplete="current-password" required>
+          <button class="eye" type="button" id="pw-toggle" aria-label="显示密码" aria-pressed="false">显示</button>
+        </div>
+      </div>
+
+      <p class="caps" id="caps"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 4 3.5 13H8v6h8v-6h4.5z"/></svg>大写锁定已开启</p>
+
+      <div class="row">
+        <label class="check"><input type="checkbox" id="remember" checked>记住账号</label>
+        <span class="hint">忘记密码请联系管理员重置</span>
+      </div>
+
+      <button class="btn" type="submit" id="submit">
+        <span class="btn__label">登 录</span>
+        <span class="spinner" aria-hidden="true"><i></i></span>
+      </button>
+
+      <div class="card__foot">
+        <span>仅限内部使用</span>
+        <a class="back" href="/">← 返回官网</a>
+      </div>
+    </form>
+  </section>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $("login-form"), userEl = $("login-user"), pwEl = $("login-pw");
+  var btn = $("submit"), eye = $("pw-toggle"), alertBox = $("alert"), alertText = $("alert-text");
+  var remember = $("remember"), caps = $("caps");
+  var REMEMBER_KEY = "zk_admin_user";
+  var busy = false;
+
+  /* ---- 账号记忆 ---- */
+  try {
+    var saved = localStorage.getItem(REMEMBER_KEY);
+    if (saved) { userEl.value = saved; remember.checked = true; }
+  } catch (e) { /* 隐私模式忽略 */ }
+
+  /* 账号已填好 → 光标直接落密码框，少点一下（移动端也不弹键盘前先滚到位） */
+  if ((userEl.value || "").trim()) {
+    try { pwEl.focus({ preventScroll: true }); } catch (e2) { /* 老浏览器忽略 */ }
+  }
+
+  /* ---- 提示条 ---- */
+  function showAlert(msg, warn) {
+    alertText.innerHTML = msg;
+    alertBox.classList.toggle("is-warn", !!warn);
+    alertBox.classList.add("is-on");
+  }
+  function clearAlert() { alertBox.classList.remove("is-on"); alertBox.classList.remove("is-warn"); }
+
+  /* ---- 从后台被送回来的原因（会话过期 / 主动退出） ---- */
+  var reason = (location.search.match(/[?&](expired|out)(?:=1)?(?:&|$)/) || [])[1];
+  if (reason === "expired") {
+    showAlert("<b>登录状态已过期。</b>请重新登录；后台仍保留着本地草稿，登录后可继续。", true);
+  } else if (reason === "out") {
+    showAlert("已安全退出登录。", true);
+  }
+
+  /* ---- 密码可见 ---- */
+  eye.addEventListener("click", function () {
+    var open = pwEl.type === "password";
+    pwEl.type = open ? "text" : "password";
+    eye.textContent = open ? "隐藏" : "显示";
+    eye.setAttribute("aria-label", open ? "隐藏密码" : "显示密码");
+    eye.setAttribute("aria-pressed", open ? "true" : "false");
+    pwEl.focus();
+  });
+
+  /* ---- 大写锁定提示 ---- */
+  function capsCheck(e) {
+    if (typeof e.getModifierState !== "function") return;
+    caps.classList.toggle("is-on", !!e.getModifierState("CapsLock"));
+  }
+  pwEl.addEventListener("keydown", capsCheck);
+  pwEl.addEventListener("keyup", capsCheck);
+  pwEl.addEventListener("blur", function () { caps.classList.remove("is-on"); });
+
+  /* ---- 提交 ---- */
+  function setBusy(v) {
+    busy = v;
+    btn.disabled = v;
+    btn.setAttribute("aria-busy", v ? "true" : "false");
+  }
+
+  function go() {
+    var target = "/admin/";
+    if (remember.checked) {
+      try { localStorage.setItem(REMEMBER_KEY, userEl.value.trim()); } catch (e) {}
+    } else {
+      try { localStorage.removeItem(REMEMBER_KEY); } catch (e) {}
+    }
+    window.location.replace(target);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (busy) return;
+    clearAlert();
+
+    var username = (userEl.value || "").trim() || "admin";
+    var password = pwEl.value || "";
+    if (!password) {
+      showAlert("请填写密码。");
+      pwEl.focus();
+      return;
+    }
+
+    setBusy(true);
+    fetch("/api/login", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username: username, password: password })
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        return { status: r.status, body: j || {} };
+      });
+    }).then(function (res) {
+      var j = res.body;
+      if (res.status === 200 && j.ok) {
+        pwEl.value = "";
+        if (j.must_change) {
+          showAlert("登录成功，请先按提示修改初始密码。", true);
+          setTimeout(function () { window.location.replace("/admin/"); }, 650);
+          return;
+        }
+        go();
+        return;
+      }
+      setBusy(false);
+      var msg = j.error || "登录失败，请稍后重试。";
+      if (res.status === 429) {
+        showAlert("<b>尝试次数过多。</b>" + msg, true);
+      } else if (res.status === 401) {
+        showAlert("<b>账号或密码错误。</b>注意大小写，密码区分大小写。");
+      } else if (j.need_start) {
+        showAlert("后台服务未启动，请回到项目根目录双击 <b>一键启动.bat</b>。", true);
+      } else {
+        showAlert(msg);
+      }
+      pwEl.select();
+    }).catch(function () {
+      setBusy(false);
+      showAlert("连不上后台服务。确认 <b>一键启动.bat</b> 的窗口还开着，再重试。", true);
+    });
+  });
+
+  /* ---- 已登录就直接进后台（少一次输入） ---- */
+  fetch("/api/status", { credentials: "same-origin" })
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      if (j && j.logged) { window.location.replace("/admin/"); }
+    })
+    .catch(function () { /* 后台没起：留在登录页，提交时再提示 */ });
+})();
+</script>
+</body>
+</html>

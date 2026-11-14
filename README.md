@@ -48,16 +48,24 @@
 | [docs/11-风险与合规.md](docs/11-风险与合规.md) | 安全审计结论、内容合规、可用性风险 | 全员 |
 | [docs/12-迭代路线图.md](docs/12-迭代路线图.md) | 已完成 / 下一步 / 明确不做 | 决策层 |
 | [docs/13-附录-接口清单.md](docs/13-附录-接口清单.md) | 35 个接口的契约摘要 | 研发 |
-| [prototype/index.html](prototype/index.html) | **可点原型**：IA 树 + 后台编辑器 + 发布状态机 | 评审、面试 |
+| **[site/](site)** | **真实官网前台**：40 个 HTML + assets（18 MB），线上产物原样拷贝 | 评审、面试、客户 |
+| [prototype/index.html](prototype/index.html) | **可点原型**：后台 IA 树 + 字段编辑器 + 发布状态机 | 评审、面试 |
 | [data/](data) | 从真实系统导出的页面清单、字段字典、产品/基地注册表、代码度量 | 研发 |
-| [screenshots/](screenshots) | 官网页 + 后台各功能页实拍 | 汇报 |
+| [screenshots/](screenshots) | 前台 + 后台各功能页实拍 | 汇报 |
 
-## 三、可点原型怎么看
+## 三、看什么
 
-- **在线**：<https://zhouzhou1699.github.io/zhongkai-cms-prd/prototype/>（GitHub Pages，免安装）
-- **离线**：直接双击 `prototype/index.html`（纯静态、零依赖）
+| 你要看 | 打开 |
+|---|---|
+| **访客看到的官网（前台）** | <https://zhouzhou1699.github.io/zhongkai-cms-prd/site/> |
+| **运营用的后台（原型）** | <https://zhouzhou1699.github.io/zhongkai-cms-prd/prototype/> |
+| 项目落地页 | <https://zhouzhou1699.github.io/zhongkai-cms-prd/> |
 
-左侧是 41 页的真实 IA 树，中间是字段编辑器线框（13 种字段类型的真实控件，内容取自真实的 218 个字段），右侧是发布状态机与优化前后对比。所有交互都是真可点的，不是截图。右上「演示状态」可切换：默认 / 有未发布 / 保存冲突 / 发布失败 / 空状态。
+**前台**是真实产物：40 页静态 HTML，原样从线上拷过来的，含 CSS/JS/图片/视频。不是设计稿，也不是我重画的。
+
+**后台**是可点原型：左侧 41 页真实 IA 树，中间 13 种字段类型的真实控件（内容取自真实的 218 个字段），右侧发布状态机。右上「演示状态」可切换：默认 / 有未发布 / 保存冲突 / 发布失败 / 空状态。
+
+> 静态托管没有后端，所以前台点「预约咨询」不会有反应、`login.html` 登录会失败。这是真实站点的已知缺陷（见 [site/README.md](site/README.md)），我刻意保留了证据而不是修好它。
 
 ## 四、关键结论（先看这五条）
 

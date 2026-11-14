@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>什么是数据标注？一文读懂人工智能背后的“数据燃料” | 中开集团</title>
+<meta name="description" content="科普知识 · 2026-04-15 · 来源：中开集团">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/r8c-style.css">
+</head>
+<body class="r8c-site--group">
+<div class="r8c-progress" aria-hidden="true"></div>
+<div class="r8c-sitebar">
+  <div class="r8c-sitebar__inner">
+    <a class="r8c-sitebar__item is-on" href="group.html">集团官网</a>
+    <span class="r8c-sitebar__sep">|</span>
+    <a class="r8c-sitebar__item" href="index.html">服务官网</a>
+    <span class="r8c-sitebar__sep">&nbsp;&nbsp;</span>
+    <span class="r8c-sitebar__item" style="pointer-events:none">服务官网入口</span>
+  </div>
+</div>
+<header class="r8c-nav r8c-nav--solid">
+  <div class="r8c-container r8c-nav__inner">
+    <a class="r8c-nav__logo" href="group.html"><svg xmlns='http://www.w3.org/2000/svg' width='184' height='46' viewBox='0 0 184 46'>
+<defs><linearGradient id='zkMark' x1='0' y1='0' x2='1' y2='1'>
+<stop offset='0' stop-color='#0052d9'/><stop offset='1' stop-color='#188ef4'/>
+</linearGradient></defs>
+<rect x='0' y='8' width='30' height='30' rx='5' fill='url(#zkMark)'/>
+<circle cx='25' cy='13' r='2.5' fill='#1dc8cc'/>
+<text x='5' y='29' fill='#fff' font-family='Montserrat' font-size='14' font-weight='700' letter-spacing='0.5'>ZK</text>
+<text x='40' y='19' fill='#3e4555' font-family='Microsoft YaHei' font-size='17' font-weight='700' letter-spacing='0.4'>中开集团</text>
+<text x='40' y='36' fill='#697081' font-family='Microsoft YaHei' font-size='9.5' letter-spacing='0.2'>中开集团有限公司</text>
+</svg></a>
+    <nav class="r8c-nav__menu"><div class="r8c-nav__item"><a class="r8c-nav__link" href="group.html">首页</a></div><div class="r8c-nav__item"><a class="r8c-nav__link" href="group-about.html" aria-haspopup="true">走进中开<span class="r8c-nav__caret" aria-hidden="true"></span></a><div class="r8c-nav__dd"><a href="group-about.html#profile" class="r8c-nav__dd-item">集团概况</a><a href="group-about.html#chairman" class="r8c-nav__dd-item">董事长致辞</a><a href="group-about.html#culture" class="r8c-nav__dd-item">企业文化</a><a href="group-about.html#org" class="r8c-nav__dd-item">组织架构</a><a href="group-about.html#honor" class="r8c-nav__dd-item">资质荣誉</a><a href="group-about.html#media" class="r8c-nav__dd-item">媒体报道</a></div></div><div class="r8c-nav__item"><a class="r8c-nav__link" href="group-business.html" aria-haspopup="true">业务板块<span class="r8c-nav__caret" aria-hidden="true"></span></a><div class="r8c-nav__dd"><a href="group-business.html#b1" class="r8c-nav__dd-item">园区运营</a><a href="group-business.html#b2" class="r8c-nav__dd-item">AI数据服务</a><a href="group-business.html#b3" class="r8c-nav__dd-item">数字服务</a><a href="group-business.html#b4" class="r8c-nav__dd-item">产教融合</a><a href="group-business.html#b5" class="r8c-nav__dd-item">数智科技</a><a href="group-business.html#b6" class="r8c-nav__dd-item">科创孵化</a><a href="group-business.html#b7" class="r8c-nav__dd-item">人力资源</a></div></div><div class="r8c-nav__item"><a class="r8c-nav__link" href="group-bases.html" aria-haspopup="true">园区基地<span class="r8c-nav__caret" aria-hidden="true"></span></a><div class="r8c-nav__dd"><a href="group-base-rizhao.html" class="r8c-nav__dd-item">日照数字服务外包基地</a><a href="group-base-opcrizhao.html" class="r8c-nav__dd-item">日照大学城OPC创业社区</a><a href="group-base-zhangjiakou.html" class="r8c-nav__dd-item">张家口数字服务产教融合基地</a><a href="group-base-zhangjiakou-opc.html" class="r8c-nav__dd-item">张家口模数空间OPC创业社区</a><a href="group-base-yichang.html" class="r8c-nav__dd-item">中开宜昌人工智能数字服务产业基地</a><a href="group-base-jiaxing.html" class="r8c-nav__dd-item">中开嘉兴基地</a><a href="group-base-shangrao.html" class="r8c-nav__dd-item">中开上饶AI数字服务交付中心</a></div></div><div class="r8c-nav__item is-active"><a class="r8c-nav__link" href="group-news.html" aria-haspopup="true">中开资讯<span class="r8c-nav__caret" aria-hidden="true"></span></a><div class="r8c-nav__dd"><a href="group-news.html#policy" class="r8c-nav__dd-item">国家政策</a><a href="group-news.html#science" class="r8c-nav__dd-item">科普知识</a><a href="group-news.html#news" class="r8c-nav__dd-item">集团动态</a></div></div><div class="r8c-nav__item"><a class="r8c-nav__link" href="group-contact.html">联系我们</a></div></nav>
+    <div class="r8c-nav__actions">
+      <a class="r8c-nav__login" href="login.html" title="运营后台登录" aria-label="登录运营后台"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="9.5" rx="1.5"/><path d="M8.25 10.5V7.9a3.75 3.75 0 0 1 7.5 0v2.6"/></svg><span>登录</span></a>
+      <a href="group-contact.html" class="r8c-btn r8c-btn--sm r8c-nav__cta">业务咨询<span class="r8c-nav__cta-ico" aria-hidden="true">&#8594;</span></a>
+      <button class="r8c-nav__toggle" aria-label="打开菜单"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<section class="r8c-subbanner r8c-subbanner--img" style="background-image:url(assets/uploads/subbanner-bg.jpg),linear-gradient(150deg,#141b33,#0a1a3d)"><div class="r8c-subbanner__inner"><h1 class="r8c-subbanner__tit">什么是数据标注？一文读懂人工智能背后的“数据燃料”</h1><p class="r8c-subbanner__desc">数据标注、AI 基础知识科普</p></div></section>
+<section class="r8c-section">
+  <div class="r8c-container">
+    <article class="r8c-newsart">
+      <div class="r8c-newsart__meta">科普知识 · 2026-04-15 · 来源：中开集团</div>
+      <div class="r8c-newsart__cover"><img src="assets/uploads/news-science-1.jpg" alt=""></div>
+      <div class="r8c-article"><p class="r8c-article__lead">数据标注是人工智能的「第一道工序」：把原始数据里机器看不懂的图像、语音、文本，逐条打上人可以理解的标签，再交给模型学习。可以说，没有高质量的数据标注，就没有今天的大模型。</p>
+<h2>数据标注到底在做什么</h2>
+<p>以图像为例，标注员需要在道路照片中框出每一辆车、每一位行人，并标明「这是汽车」「这是行人」；在语音场景中，则要把一段录音逐句转写为文字，并标注出发起人、语速、情绪等特征；在文本场景中，要判断一段工单属于哪类业务、是否包含风险信息。这些带着标签的数据，就是模型训练时不断对照的「标准答案」。</p>
+<p>按照任务形态，数据标注可以分为图像标注、语音标注、文本标注与视频标注四大类。校园广播中区分「后勤管理」与「消防安全」两类播报、地图数据中识别道路标线与交通标志，背后都是同一套「人先教、机器再学」的标注逻辑。</p>
+<h2>为什么说质量决定上限</h2>
+<p>模型的能力上限，很大程度上由标注质量决定：标签错了，模型就照着错的学；标准不统一，模型就会在不同批次的数据之间「左右摇摆」。因此规范的标注流程通常包含明确的分类规则、双人交叉质检与抽样复盘，而不是简单地「框完就算」。</p>
+<p>随着大模型时代到来，数据标注的门槛也在提高——从简单的画框转写，逐步扩展到指令遵循、知识问答、思维链构造等更复杂的认知标注。标注员正在从「体力工」转变为「AI 的老师」，而高质量的标注数据，也成为企业运营手中真正的生产要素。</p></div>
+      <a class="r8c-arrow-link r8c-newsart__back" href="group-news.html">返回中开资讯</a>
+    </article>
+  </div>
+</section>
+<div class="r8c-page-cta">
+  <div><div class="r8c-page-cta__tit">想了解更多？</div><div class="r8c-page-cta__desc">欢迎联系我们，获取最新资讯与合作信息。</div></div>
+  <a href="group-contact.html" class="r8c-btn r8c-btn--lg">联系我们</a>
+</div>
+<footer class="r8c-dark" style="padding:60px 0 30px">
+  <div class="r8c-container">
+    <div class="r8c-grid r8c-grid--4">
+      <div>
+        <h3 class="r8c-h3" style="color:#fff;margin-bottom:16px">关于中开集团</h3>
+        <p class="r8c-text-sm" style="color:rgba(255,255,255,.65)">聚焦“城市+大学”数字经济产教融合，集团化运营园区、AI 数据服务、数字服务与职业教育。<br>总部位于山东日照。</p>
+      </div>
+      <div>
+        <h3 class="r8c-h3" style="color:#fff;margin-bottom:16px">业务板块</h3>
+        <p class="r8c-text-sm" style="color:rgba(255,255,255,.65)">园区运营 / AI数据服务<br>数字服务 / 产教融合</p>
+      </div>
+      <div>
+        <h3 class="r8c-h3" style="color:#fff;margin-bottom:16px">快速链接</h3>
+        <p class="r8c-text-sm" style="color:rgba(255,255,255,.65)">走进中开 · 业务板块<br>园区基地 · 中开资讯</p>
+      </div>
+      <div>
+        <h3 class="r8c-h3" style="color:#fff;margin-bottom:16px">联系我们</h3>
+        <p class="r8c-text-sm" style="color:rgba(255,255,255,.65)">电话：182-6337-1901<br>邮箱：service@zhongkaisk.cn<br>地址：山东省日照市东港区学苑路与学海路交汇处 日照大学城·日照电子商务科技园<br>鲁ICP备2021006930号</p>
+      </div>
+    </div>
+    <hr class="r8c-divider" style="margin:36px 0 20px;background:rgba(255,255,255,.12)">
+    <p style="font-size:13px;color:rgba(255,255,255,.45);text-align:center">
+      © 2026 中开集团 版权所有 &nbsp;|&nbsp; <a href="index.html" style="color:rgba(255,255,255,.6)">服务官网</a> &nbsp;|&nbsp; <a href="login.html" style="color:rgba(255,255,255,.6)">运营后台</a>
+    </p>
+  </div>
+</footer>
+<button class="r8c-top-btn" aria-label="回到顶部">↑</button>
+<div class="r8c-drawer__overlay"></div>
+<aside class="r8c-drawer">
+  <div class="r8c-drawer__head">
+    <span class="r8c-drawer__title">中开集团</span>
+    <button class="r8c-drawer__close" aria-label="关闭">×</button>
+  </div>
+  <div class="r8c-drawer__body"><div class="r8c-drawer__item"><a class="r8c-drawer__link" href="group.html">首页<span class="r8c-arrow">▶</span></a></div><div class="r8c-drawer__item has-sub"><a class="r8c-drawer__link" href="group-about.html">走进中开<span class="r8c-arrow">▶</span></a><div class="r8c-drawer__sub"><a href="group-about.html#profile">集团概况</a><a href="group-about.html#chairman">董事长致辞</a><a href="group-about.html#culture">企业文化</a><a href="group-about.html#org">组织架构</a><a href="group-about.html#honor">资质荣誉</a><a href="group-about.html#media">媒体报道</a></div></div><div class="r8c-drawer__item has-sub"><a class="r8c-drawer__link" href="group-business.html">业务板块<span class="r8c-arrow">▶</span></a><div class="r8c-drawer__sub"><a href="group-business.html#b1">园区运营</a><a href="group-business.html#b2">AI数据服务</a><a href="group-business.html#b3">数字服务</a><a href="group-business.html#b4">产教融合</a><a href="group-business.html#b5">数智科技</a><a href="group-business.html#b6">科创孵化</a><a href="group-business.html#b7">人力资源</a></div></div><div class="r8c-drawer__item has-sub"><a class="r8c-drawer__link" href="group-bases.html">园区基地<span class="r8c-arrow">▶</span></a><div class="r8c-drawer__sub"><a href="group-base-rizhao.html">日照数字服务外包基地</a><a href="group-base-opcrizhao.html">日照大学城OPC创业社区</a><a href="group-base-zhangjiakou.html">张家口数字服务产教融合基地</a><a href="group-base-zhangjiakou-opc.html">张家口模数空间OPC创业社区</a><a href="group-base-yichang.html">中开宜昌人工智能数字服务产业基地</a><a href="group-base-jiaxing.html">中开嘉兴基地</a><a href="group-base-shangrao.html">中开上饶AI数字服务交付中心</a></div></div><div class="r8c-drawer__item has-sub"><a class="r8c-drawer__link is-on" href="group-news.html">中开资讯<span class="r8c-arrow">▶</span></a><div class="r8c-drawer__sub"><a href="group-news.html#policy">国家政策</a><a href="group-news.html#science">科普知识</a><a href="group-news.html#news">集团动态</a></div></div><div class="r8c-drawer__item"><a class="r8c-drawer__link" href="group-contact.html">联系我们<span class="r8c-arrow">▶</span></a></div></div>
+  <div class="r8c-drawer__foot">
+    <a href="login.html" class="r8c-btn r8c-btn--line r8c-drawer__login"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="9.5" rx="1.5"/><path d="M8.25 10.5V7.9a3.75 3.75 0 0 1 7.5 0v2.6"/></svg>运营后台登录</a>
+    <a href="index.html" class="r8c-btn r8c-btn--line">服务官网</a>
+  </div>
+</aside>
+<script>
+(function(){
+  var tg=document.querySelector('.r8c-nav__toggle');
+  var dr=document.querySelector('.r8c-drawer');
+  var ov=document.querySelector('.r8c-drawer__overlay');
+  var cl=document.querySelector('.r8c-drawer__close');
+  if(!dr||!tg)return;
+  function open(){dr.classList.add('is-open');ov.classList.add('is-open');tg.classList.add('is-open');document.body.style.overflow='hidden';}
+  function close(){dr.classList.remove('is-open');ov.classList.remove('is-open');tg.classList.remove('is-open');document.body.style.overflow='';}
+  tg.addEventListener('click',function(){dr.classList.contains('is-open')?close():open();});
+  ov.addEventListener('click',close);
+  cl.addEventListener('click',close);
+  document.querySelectorAll('.r8c-drawer__item.has-sub>.r8c-drawer__link').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var it=a.parentNode;
+      if(it.classList.contains('is-open')){it.classList.remove('is-open');return;}
+      e.preventDefault();it.classList.add('is-open');
+    });
+  });
+  window.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+<script>
+(function(){
+  /* 首页导航：滚动 80px 后由「深色叠加」切到「白色实心」
+     进场 / 计数 / Tab / 轮播 / 展开 / 视差 等动效统一由 assets/r8c-motion.js 负责 */
+  var nav=document.querySelector('.r8c-nav');
+  if(!nav||!nav.classList.contains('r8c-nav--overlay'))return;
+  var solid=false;
+  function upd(){
+    var on=window.scrollY>80;
+    if(on===solid)return;
+    solid=on;
+    nav.classList.toggle('r8c-nav--solid',on);
+    nav.classList.toggle('r8c-nav--overlay',!on);
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  upd();
+})();
+</script>
+<script src="assets/r8c-motion.js" defer></script>
+</body>
+</html>
