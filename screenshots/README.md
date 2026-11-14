@@ -1,8 +1,21 @@
 # 附录 · 截图说明
 
-所有截图来自真实运行中的系统（本地 127.0.0.1:8901 静态服务 / 后台 6993），非设计稿。
+所有截图来自真实运行中的系统（GitHub Pages 上的 `site/` 镜像 / 本地后台 6993），非设计稿。
 
-## 官网（前台）
+## 线上实拍（GitHub Pages 上跑的真实镜像）
+
+| 文件 | 页面 | 看点 |
+|---|---|---|
+| [pages-index.png](pages-index.png) | 服务官网首页 | 视频首屏 + 数据条（5 省 / 2,000+ 席位 / 60+ 院校 / 30+ 企业）+ 资讯区 |
+| [pages-products.png](pages-products.png) | 产品超市 | 12 款软件 / 3 款硬件的分阶段货架（标注→训练→应用） |
+| [pages-product-3d.png](pages-product-3d.png) | 3D 点云标注平台 | 能力卡 4 张 + 规格表 6 行 + 相关产品 |
+| [pages-solutions.png](pages-solutions.png) | 解决方案 | 4 个方案块 |
+| [pages-group-bases.png](pages-group-bases.png) | 园区基地（集团站） | 7 基地 / 5 省 / 4,098+ 席位 / 6,997+ 就业，按省筛选 |
+| [pages-group-base-rizhao.png](pages-group-base-rizhao.png) | 日照基地详情 | 单基地的完整证据链 |
+| [pages-contact.png](pages-contact.png) | 联系我们 | **注意：「提交需求」无后端（已知缺陷 F-17）** |
+| [pages-landing.png](pages-landing.png) | 项目落地页 | 前后台双入口 + 统计条 |
+
+## 官网（本地构建版）
 
 | 文件 | 页面 | 看点 |
 |---|---|---|
