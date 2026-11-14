@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>中开服务官网改版 · ZK-CMS 产品交付物</title>
+<style>
+:root{--ink:#111827;--ink2:#374151;--muted:#6b7280;--line:#e5e7eb;--blue:#2563eb;--bg:#f7f8fa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:56px 24px 80px}
+.kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+h1{font-size:32px;line-height:1.3;margin:0 0 14px;letter-spacing:-.01em}
+.lead{font-size:16px;color:var(--ink2);max-width:680px;margin:0 0 28px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
+a.btn{display:inline-block;padding:11px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600}
+a.primary{background:var(--blue);color:#fff}
+a.ghost{border:1px solid var(--line);background:#fff;color:var(--ink2)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:44px}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:25px}}
+.stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.stat b{display:block;font-size:22px;letter-spacing:-.02em}
+.stat span{font-size:12px;color:var(--muted)}
+h2{font-size:14px;letter-spacing:.04em;color:var(--muted);margin:0 0 12px;font-weight:600}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:40px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+a.card{display:block;background:#fff;border:1px solid var(--line);border-radius:10px;
+  padding:13px 16px;text-decoration:none;color:inherit;transition:.15s}
+a.card:hover{border-color:#cbd5e1;transform:translateY(-1px)}
+a.card b{display:block;font-size:14px;margin-bottom:2px}
+a.card span{font-size:12px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Product Delivery · 2026</div>
+  <h1>中开服务官网改版<br>把官网从「外包交付物」变成「运营自己维护的内容产品」</h1>
+  <p class="lead">
+    问题不是「不好看」，是「改不动」——改一个字要走外包排期两周。重做成内容中台后：
+    41 个页面拆成 218 个可编辑字段，运营自己改、4 步发布，全站 0.22 秒。
+  </p>
+
+  <div class="cta">
+    <a class="btn primary" href="prototype/">打开可点原型 →</a>
+    <a class="btn ghost" href="https://github.com/zhouzhou1699/zhongkai-cms-prd">GitHub 仓库</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>41</b><span>页面（双站 + 独立站）</span></div>
+    <div class="stat"><b>218</b><span>可编辑字段 / 13 类型</span></div>
+    <div class="stat"><b>0.22s</b><span>全站发布（原 4.5s）</span></div>
+    <div class="stat"><b>35</b><span>后台接口</span></div>
+  </div>
+
+  <h2>文档</h2>
+  <div class="grid">
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/00-项目一页纸.md"><b>00 项目一页纸</b><span>背景 / 目标 / 范围 / 结果</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/01-调研报告.md"><b>01 调研报告</b><span>行业、政策、竞品、内部访谈、现状量化</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/02-用户与需求.md"><b>02 用户与需求</b><span>四类角色、JTBD、需求池</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/03-PRD-内容中台.md"><b>03 PRD（主文档）</b><span>功能规格、状态机、失败模式、验收</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/04-信息架构.md"><b>04 信息架构</b><span>41 页 IA 树与导航规则</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/05-内容模型与字段字典.md"><b>05 内容模型</b><span>218 字段的建模方法与字典</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/06-交互与原型说明.md"><b>06 交互与原型</b><span>关键流程走查、异常态、文案规范</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/07-发布性能复盘.md"><b>07 性能复盘</b><span>4.5s → 0.22s 的测量与改法</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/08-竞品分析.md"><b>08 竞品分析</b><span>同业官网 + 三条技术路线对比</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/09-数据指标与埋点.md"><b>09 指标与埋点</b><span>北极星指标、漏斗、事件表</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/10-测试与验收用例.md"><b>10 测试与验收</b><span>分层用例与关键断言</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/11-风险与合规.md"><b>11 风险与合规</b><span>安全审计、内容合规、风险登记册</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/12-迭代路线图.md"><b>12 迭代路线图</b><span>已完成 / 下一步 / 明确不做</span></a>
+    <a class="card" href="https://github.com/zhouzhou1699/zhongkai-cms-prd/blob/main/docs/13-附录-接口清单.md"><b>13 接口清单</b><span>35 个接口的契约摘要</span></a>
+  </div>
+
+  <div class="note">
+    所有数字来自真实运行系统，可用 <code>scripts/</code> 复跑：内容模型导出、规模度量、构建基准、原型重建。
+    截图取自真实前台与后台，非设计稿。
+  </div>
+</div>
+</body>
+</html>
